@@ -1,4 +1,5 @@
 from random import random
+from models.comportement import Comportement
 
 class Ennemi:
     def __init__(self, nom, hp, attaque, comportement):
