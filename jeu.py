@@ -1,4 +1,8 @@
-from ennemi import Ennemi
+from models.ennemi import Ennemi
+from models.comportements.comportement_agressif import ComportementAgressif
+from models.comportements.comportement_defensif import ComportementDefensif
+from models.comportements.comportement_aleatoire import ComportementAleatoire
+from models.comportements.comportement_furtif import ComportementFurtif
 
 class Jeu:
     def __init__(self):
@@ -7,9 +11,10 @@ class Jeu:
         self.heros_attaque = 20
 
         self.ennemis = [
-            Ennemi("Goblin", 50, 10, "agressif"),
-            Ennemi("Dragon", 100, 20, "defensif"),
-            Ennemi("Voleur", 30, 15, "furtif"),
+            Ennemi("Gobelin", 50, 8, ComportementAgressif()),
+            Ennemi("Dragon", 100, 12, ComportementDefensif()),
+            Ennemi("Spectre", 40, 10, ComportementAleatoire()),
+            Ennemi("Voleur", 30, 10, ComportementFurtif()),
         ]
 
     def ennemis_vivants(self):
